@@ -1,35 +1,44 @@
-PRAGMA foreign_keys = ON;
-PRAGMA journal_mode = WAL;
-PRAGMA synchronous = NORMAL;
-
-CREATE TABLE IF NOT EXISTS Album
-  ( Album_Id     INTEGER
-  , Name         TEXT
-  , PRIMARY KEY (Album_Id)
-  );
+                                           
 
 
-CREATE TABLE IF NOT EXISTS Song
-  ( Song_Id      INTEGER
-  , Name         TEXT
-  , Album_Id     INTEGER
-  , PRIMARY KEY (Song_Id)
-  , FOREIGN KEY (Album_Id) REFERENCES Album (Album_Id)
-  );
+ PRAGMA foreign_keys = ON;
+ PRAGMA journal_mode = WAL;
+ PRAGMA synchronous = NORMAL;
 
-INSERT INTO Album
-  (Name)
-  VALUES
-    ("Odeio te Amar =("),
-    ("I'm Alergic to Dogs!");
 
-INSERT OR REPLACE INTO Song
-  (Name, Album_Id)
-  VALUES
-      ("Woo!", 2);
 
-Select Album.Name, Song.Name
-  FROM Song LEFT JOIN Album
-  ON Album.Album_Id = Song.Album_Id
+   CREATE TABLE IF NOT EXISTS Album
+     ( Album_Id     INTEGER
+     , Name         TEXT
+     , PRIMARY KEY (Album_Id)
+     ;)
+
+
+
+   CREATE TABLE IF NOT EXISTS Song
+     ( Song_Id      INTEGER
+     , Name         TEXT
+     , Album_Id     INTEGER
+     , PRIMARY KEY (Song_Id)
+     , FOREIGN KEY (Album_Id) REFERENCES Album (Album_Id)
+     );
+
+
+  INSERT INTO Album
+   (Name)
+   VALUES
+     ("Odeio te Amar =("),
+     ("I'm Alergic to Dogs!");
+
+
+ INSERT OR REPLACE INTO Song
+   (Name, Album_Id)
+   VALUES
+       ("Woo!", 2);
+
+
+  Select Album.Name, Song.Name
+FROM Song LEFT JOIN Album
+ON Album.Album_Id = Song.Album_Id
 
 
