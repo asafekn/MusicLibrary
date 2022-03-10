@@ -60,7 +60,6 @@ CREATE TABLE IF NOT EXISTS Album
   );
 
 
-
 CREATE TABLE IF NOT EXISTS Artist
   ( Artist_Id      INTEGER
   , Name           TEXT 
@@ -96,3 +95,61 @@ CREATE TABLE IF NOT EXISTS Album_Artist
   , FOREIGN KEY (Artist_Id) REFERENCES Artist (Artist_Id)
   , FOREIGN KEY (Album_Id) REFERENCES Album (Album_Id)
   );
+
+
+INSERT INTO Album
+   (Name)
+   VALUES
+     ("I'm Alergic to Dogs!"),
+     ("In Utero"),
+     ("Nevermind"),
+     ("The Colour And The Shape"),
+     ("Echoes, Silence, Patience & Grace");
+
+
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES
+       ("Woo!", 1);
+
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES
+       ("Heart-Shaped Box", 2);
+
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES
+       ("Smells Like Teen Spirit", 3);
+       
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES       
+       ("Come As You Are", 3);
+       
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES       
+       ("Lithium", 3);
+       
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES       
+       ("Everlong", 4);
+       
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES       
+       ("My Hero", 4);
+       
+INSERT INTO Song
+   (Name, Album_Id)
+   VALUES       
+       ("THe Pretender", 5);
+       
+SELECT *
+FROM Album;
+
+SELECT Album.Name, Song.Name
+FROM Song LEFT JOIN Album
+ON Album.Album_Id = Song.Album_Id;
