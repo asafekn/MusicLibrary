@@ -1,10 +1,8 @@
-function configure(app) {
+const { ROOT } = require("./env.js");
+const root = require(`${ROOT}/routes/root.js`);
 
-  app.get("/", function handleRoot(req, res) {
-    res.send(`
-      <h1>Hello world</h1>
-    `);
-  });
+function configure(app) {
+  app.get("/", root.handle);
 }
 
 module.exports = {
