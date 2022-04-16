@@ -1,0 +1,14 @@
+# .gitignore is a file that lists names of directories and files
+# that 'git' should ignore. We want to ignore things that are not
+# source code. This includes:
+#
+#   * User data (like our database)
+#   * Compilation outputs
+#   * Downloaded modules
+#   * Anything else that can be generated from the data that we already track with git
+
+# Ignore JavaScript's local modules directory
+node_modules
+
+# Ignore the database
+*.db
