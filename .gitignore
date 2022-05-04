@@ -12,3 +12,6 @@ node_modules
 
 # Ignore the database
 *.db
+
+# Ignore Elm's packages directory
+elm-stuff
