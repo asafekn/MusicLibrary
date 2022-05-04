@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "compile-client": "(cd client && elm make src/Main.elm)"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "sqlite": "^4.0.25",
