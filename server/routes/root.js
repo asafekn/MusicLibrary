@@ -1,11 +1,8 @@
-
-const rootPage = `
-<h1>Hello world</h1>
-<p>This is the root page for Music Library</p>
-`
+const { CLIENT_PATH } = require("../env.js");
 
 function handle(req, res) {
-  res.send(rootPage);
+  // Send the html page for the compiled client code.
+  res.sendFile(CLIENT_PATH);
 }
 
 module.exports = { handle: handle };

@@ -12,3 +12,8 @@ node_modules
 
 # Ignore the database
 *.db
+
+# Ignore Elm's packages directory
+client/elm-stuff
+# Ignore compiled output
+client/index.html
