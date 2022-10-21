@@ -133,7 +133,91 @@ function createMusicTables(database) {
   `);
 }
 
+function insertValues(database) {
+
+  database.run(`
+
+    INSERT INTO Album
+    (Name)
+    VALUES
+      ("I'm Alergic to Dogs!"),
+      ("In Utero"),
+      ("Nevermind"),
+      ("The Colour And The Shape"),
+      ("Echoes, Silence, Patience & Grace");
+
+  `);
+
+  database.run(`
+    
+    INSERT INTO Artist
+      (Name)
+      VALUES
+        ("Remi Wolf"),
+        ("Nirvana"),
+        ("Foo Fighters");
+  `);
+
+  database.run(`
+
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES
+          ("Woo!", 1, 1);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES
+          ("Heart-Shaped Box", 2, 2);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES
+          ("Smells Like Teen Spirit", 3, 2);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES       
+          ("Come As You Are", 3, 2);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES       
+          ("Lithium", 3, 2);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES       
+          ("Everlong", 4, 3);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES       
+          ("My Hero", 4, 3);
+  `);
+
+  database.run(`
+    INSERT INTO Song
+      (Name, Album_Id, Artist_Id)
+      VALUES       
+          ("THe Pretender", 5, 3);
+    
+  `);
+}
 module.exports = {
   openLibraryDatabase : openLibraryDatabase,
-  createMusicTables : createMusicTables
+  createMusicTables : createMusicTables,
+  insertValues : insertValues
 };
