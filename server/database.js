@@ -216,8 +216,19 @@ function insertValues(database) {
     
   `);
 }
+
+function createTestDb(path) {
+
+  const db = openLibraryDatabase(path);
+  createMusicTables(db);
+  insertValues(db);
+
+  console.log(`test data base created at ${path}`);
+}
+
 module.exports = {
   openLibraryDatabase : openLibraryDatabase,
   createMusicTables : createMusicTables,
-  insertValues : insertValues
+  insertValues : insertValues,
+  createTestDb : createTestDb
 };
