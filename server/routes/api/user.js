@@ -2,7 +2,7 @@
 function handle(req, res, database) {
 
   // get all results from this query
-  database.all("SELECT * FROM Artist", function (err, results) {
+  database.all("SELECT * FROM User", function (err, results) {
     if (err == undefined) {
       res.json(results);
     } else {
